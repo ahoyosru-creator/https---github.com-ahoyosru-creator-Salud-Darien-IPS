@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGNA - Salud Darién IPS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- === LOGIN === -->
+  <section id="login-section" class="login-container fade-in">
+    <div class="login-card">
+      <img src="img/Imagen.png" alt="Logo SGNA" class="logo">
+      <h1>Bienvenido al Sistema SGNA</h1>
+      <form id="loginForm">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" placeholder="Ingrese su usuario" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+
+        <button type="submit" class="btn-primary">Iniciar Sesión</button>
+        <p id="errorMsg" class="error"></p>
+        <p id="successMsg" class="success"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- === APLICACIÓN PRINCIPAL === -->
+  <div id="mainApp" class="hidden fade-in">
+    <aside class="sidebar slide-in-left">
+  <div class="sidebar-header">
+    <img src="img/Logo.png" alt="Logo Salud Darién" class="sidebar-logo">
+    <h2>SGNA</h2>
+  </div>
+  <ul>
+    <li class="active" data-section="dashboard">🏠 Dashboard</li>
+    <li data-section="eventos">📝 Registrar Evento</li>
+    <li data-section="reportes">📊 Reportes</li>
+    <li data-section="excusas">🕒 Excusas</li>
+    <li data-section="vacaciones">🌴 Vacaciones</li>
+    <li data-section="admin">⚙️ Admin</li>
+  </ul>
+  <div class="sidebar-footer">
+    <button id="logoutBtn" class="btn-secondary">Cerrar Sesión</button>
+    <button id="darkModeToggle" class="btn-dark">🌙 Modo Oscuro</button>
+  </div>
+</aside>
+
+    <main class="content fade-in">
+      <section id="dashboard" class="section active">
+        <h1>Panel Principal - SGNA</h1>
+        <p>Bienvenido al sistema de gestión de novedades, vacaciones y ausentismo de Salud Darién IPS.</p>
+        <div class="cards">
+          <div class="card">👥 Empleados activos: <strong>48</strong></div>
+          <div class="card">📅 Eventos recientes: <strong>12</strong></div>
+          <div class="card">🏖️ Vacaciones en curso: <strong>5</strong></div>
+        </div>
+      </section>
+
+      <section id="eventos" class="section">
+        <h1>Registrar Evento</h1>
+        <form class="form">
+          <input type="text" placeholder="Nombre del empleado" required>
+          <input type="date" required>
+          <select required>
+            <option value="">Tipo de evento</option>
+            <option>Novedad</option>
+            <option>Ausencia</option>
+            <option>Permiso</option>
+          </select>
+          <textarea placeholder="Descripción" required></textarea>
+          <button class="btn-primary">Guardar Evento</button>
+        </form>
+      </section>
+
+      <section id="reportes" class="section">
+        <h1>Reportes</h1>
+        <div class="filters">
+          <input type="date">
+          <select>
+            <option>Todos los tipos</option>
+            <option>Novedad</option>
+            <option>Ausencia</option>
+          </select>
+          <button class="btn-secondary">Filtrar</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Empleado</th>
+              <th>Fecha</th>
+              <th>Tipo</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Laura Pérez</td>
+              <td>2025-10-08</td>
+              <td>Vacaciones</td>
+              <td>15 días programados</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="excusas" class="section">
+        <h1>Gestión de Excusas</h1>
+        <form class="form">
+          <input type="text" placeholder="Nombre del empleado" required>
+          <input type="date" required>
+          <textarea placeholder="Motivo de la excusa"></textarea>
+          <button class="btn-primary">Registrar Excusa</button>
+        </form>
+      </section>
+
+      <section id="vacaciones" class="section">
+        <h1>Gestión de Vacaciones</h1>
+        <form class="form">
+          <input type="text" placeholder="Nombres y Apellidos" required>
+          <input type="text" placeholder="Área" required>
+          <input type="text" placeholder="Jefe Inmediato" required>
+          <label>Fecha inicio:</label><input type="date" required>
+          <label>Fecha fin:</label><input type="date" required>
+          <button class="btn-primary">Registrar Vacaciones</button>
+        </form>
+      </section>
+
+      <section id="admin" class="section">
+        <h1>Administración de Usuarios</h1>
+        <form class="form">
+          <input type="text" placeholder="Usuario" required>
+          <input type="password" placeholder="Contraseña" required>
+          <select>
+            <option>Rol</option>
+            <option>Administrador</option>
+            <option>Empleado</option>
+          </select>
+          <button class="btn-primary">Guardar Usuario</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
